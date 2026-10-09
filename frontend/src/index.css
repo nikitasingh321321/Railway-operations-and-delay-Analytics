@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --sidebar-w: 240px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: #f0f2f5;
+    color: #111827;
+    line-height: 1.6;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 99px; }
+  ::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
+
+  /* Smooth focus ring */
+  *:focus-visible {
+    outline: 2px solid #6366f1;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-2xl border border-gray-100 shadow-sm;
+  }
+
+  .card-header {
+    @apply flex items-center justify-between px-6 py-4 border-b border-gray-50;
+  }
+
+  .card-title {
+    @apply text-sm font-semibold text-gray-700 tracking-tight;
+  }
+
+  .badge-green  { @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700; }
+  .badge-yellow { @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-amber-50 text-amber-700; }
+  .badge-red    { @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-red-50 text-red-700; }
+  .badge-blue   { @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-blue-50 text-blue-700; }
+  .badge-gray   { @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-gray-100 text-gray-600; }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-indigo-600 text-white text-sm font-medium
+           hover:bg-indigo-700 active:bg-indigo-800 transition-colors shadow-sm;
+  }
+
+  .input-field {
+    @apply border border-gray-200 bg-white rounded-lg px-3 py-2 text-sm text-gray-800
+           focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent
+           placeholder:text-gray-400 transition;
+  }
+
+  .select-field {
+    @apply border border-gray-200 bg-white rounded-lg px-3 py-2 text-sm text-gray-800
+           focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent
+           transition cursor-pointer;
+  }
+
+  /* Skeleton shimmer */
+  .skeleton {
+    @apply bg-gray-100 rounded-xl;
+    background: linear-gradient(90deg, #f3f4f6 25%, #e9eaec 50%, #f3f4f6 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.4s infinite;
+  }
+
+  @keyframes shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+}

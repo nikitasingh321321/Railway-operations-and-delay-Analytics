@@ -1,0 +1,50 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+
+# Virtual environments
+backend/venv/
+venv/
+.venv/
+env/
+
+# Database
+backend/railway.db
+*.db
+*.sqlite
+*.sqlite3
+
+# Environment variables -- never commit
+backend/.env
+.env
+
+# Node / Frontend
+frontend/node_modules/
+node_modules/
+frontend/dist/
+dist/
+
+# Vite / TypeScript build outputs
+*.tsbuildinfo
+frontend/.vite/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
